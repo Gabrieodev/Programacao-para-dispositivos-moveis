@@ -472,3 +472,47 @@ Em um aplicativo de e-mail:
 - A separação entre **lógica (código)** e **interface (XML)** é fundamental  
 
 ---
+
+## 🔄 Intent
+
+### 📌 O que é?
+
+Uma **Intent** (intenção) é a descrição de uma **ação a ser realizada** no Android.
+
+---
+
+### 🎯 Para que serve?
+
+A classe **Intent** é utilizada principalmente para:
+
+- Abrir outra tela (Activity)
+- Navegar entre partes do aplicativo
+- Executar ações do sistema
+
+---
+
+### 💡 Possibilidades de uso
+
+Com uma Intent é possível:
+
+- Abrir outra Activity (com ou sem envio de dados)
+- Abrir uma página web no navegador
+- Acessar a agenda de contatos
+- Realizar uma ligação telefônica
+- Interagir com recursos do dispositivo
+
+---
+
+## 📱 Chamar outra Activity
+
+A navegação entre telas é feita utilizando **Intent + startActivity()**
+
+---
+
+### ⚙️ Exemplo (no onClick do Button)
+
+```kotlin
+val intent = Intent(this, MainActivity2::class.java)
+startActivity(intent)
+```
+
