@@ -516,3 +516,248 @@ val intent = Intent(this, MainActivity2::class.java)
 startActivity(intent)
 ```
 
+# 🧩 Unidade 6 — Comunicação com Servidores e Processamento de Dados
+
+## 🌐 Visão Geral
+
+Esta unidade aborda como aplicativos Android se comunicam com servidores e processam dados externos.
+
+### 📌 Conteúdo
+
+- Dados JSON no Android  
+- Conexão HTTP  
+- Classe AsyncTask  
+- Integração JSON + HTTP  
+
+---
+
+## 🔄 Revisão — Processamento de Dados
+
+Aplicativos móveis frequentemente:
+
+- Fazem **requisições HTTP**
+- Enviam e recebem dados de servidores
+- Consomem informações em formatos como:
+  - Texto
+  - HTML
+  - XML
+  - JSON  
+
+---
+
+### ☁️ Exemplo de uso
+
+- Firebase Realtime Database  
+- APIs externas  
+- Serviços web  
+
+---
+
+## 📄 Onde usar XML e JSON?
+
+| Tecnologia | Uso |
+|-----------|-----|
+| XML | Interface (layouts no Android) |
+| JSON | Troca de dados com servidores |
+
+---
+
+## 📦 JSON (JavaScript Object Notation)
+
+### 📌 O que é?
+
+JSON é um formato leve de troca de dados, baseado em texto.
+
+---
+
+### 🎯 Características
+
+- Fácil de ler e escrever (humanos)  
+- Fácil de processar (máquinas)  
+- Independente de linguagem  
+- Muito utilizado em APIs  
+
+---
+
+## 🧱 Estrutura do JSON
+
+Um JSON pode conter:
+
+- **Objetos** → `{ }`  
+- **Arrays (vetores)** → `[ ]`  
+- **Pares chave-valor** → `"chave": valor`  
+
+---
+
+### 💡 Exemplo conceitual
+
+```json
+{
+  "funcionarios": [
+    {
+      "id": "01",
+      "nome": "Prof. Lucas",
+      "salario": 5000.0,
+      "disciplinas": [
+        {"cod": 1001, "nome": "Disciplina 1"},
+        {"cod": 1002, "nome": "Disciplina 2"}
+      ]
+    }
+  ]
+}
+```
+
+# 🔄 Continuação — Unidade 6
+
+## 🧵 AsyncTask (Execução Assíncrona)
+
+### 📌 O que é?
+
+A classe **AsyncTask** permite executar tarefas em **segundo plano** de forma simples, sem precisar gerenciar threads manualmente.
+
+---
+
+### 🎯 Para que serve?
+
+- Executar operações demoradas (ex: HTTP)
+- Evitar travamentos na interface (UI)
+- Atualizar a tela após o processamento
+
+---
+
+### ⚙️ Funcionamento
+
+Uma classe derivada de `AsyncTask` possui dois métodos principais:
+
+---
+
+#### 🔹 doInBackground
+
+- Executa fora da thread principal (background)
+- Responsável por:
+  - Fazer requisições HTTP
+  - Aguardar resposta do servidor
+  - Processar dados recebidos
+- É iniciado ao chamar o método:
+
+
+---
+
+#### 🔹 onPostExecute
+
+- Executado após o término da tarefa
+- Roda na thread principal (UI)
+- Responsável por:
+  - Atualizar a interface
+  - Exibir os dados processados
+
+---
+
+### ⚠️ Observação Importante
+
+- A classe **AsyncTask foi descontinuada (deprecated)** a partir da API 30 (Android 11)
+- Alternativas modernas:
+  - `java.util.concurrent`
+  - Recursos de concorrência do Kotlin (coroutines)
+
+---
+
+## 📚 Bibliotecas para HTTP e JSON
+
+Para facilitar o desenvolvimento, é comum utilizar bibliotecas prontas.
+
+---
+
+### 📌 Exemplo: Volley
+
+- Biblioteca oficial do Google
+- Facilita requisições HTTP
+- Suporte nativo para JSON
+- Integração com componentes visuais
+
+---
+
+### 🎯 Vantagens
+
+- Código mais simples
+- Melhor gerenciamento de requisições
+- Menos controle manual de threads
+
+---
+
+## 🧱 Exibição de Dados
+
+### 📌 RecyclerView
+
+- Componente utilizado para exibir listas de dados
+- Muito usado com dados vindos de APIs (JSON)
+
+---
+
+## 🖼️ Exemplo Adicional
+
+Aplicativo que:
+
+- Realiza requisições HTTP
+- Recebe imagens de um servidor remoto
+- Exibe imagens na tela
+- Atualiza a imagem a cada clique no botão
+
+---
+
+## 📦 Exemplos Práticos da Unidade
+
+### 📌 Processamento de JSON
+
+- **ExemploJSON (ExJSON)**
+  - Processa JSON local dentro do app
+
+---
+
+### 🌐 Requisições HTTP
+
+- **ExemploHTTP1 (ExHttp1)**
+  - Utiliza Thread
+  - Retorna texto simples
+
+- **ExemploHTTP2 (ExHttp2)**
+  - Utiliza AsyncTask
+  - Solução mais estruturada
+
+---
+
+### 🔄 Integração JSON + HTTP
+
+- **ExemploJSON_HTTP (ExJSONHttp)**
+  - Requisição HTTP
+  - Retorno em JSON
+
+- **ExemploJSONObjDentroDeObj**
+  - JSON com objetos aninhados
+
+---
+
+### 🧪 Exercícios
+
+- **Exercicio_aula_json (ExercJSON)**
+  - Manipulação de JSON retornado por servidor
+
+---
+
+### 🖼️ Conteúdo Remoto
+
+- **App1ImagemRemota**
+  - Carrega imagens de um servidor web
+  - Exibição dinâmica na tela
+
+---
+
+## 📌 Observações Gerais
+
+- AsyncTask simplifica o uso de threads, mas está obsoleta  
+- Bibliotecas como Volley facilitam muito o desenvolvimento  
+- JSON é o principal formato de dados em APIs  
+- Requisições HTTP devem sempre ser feitas em segundo plano  
+- RecyclerView é essencial para exibir listas dinâmicas  
+
+---
