@@ -607,7 +607,6 @@ Um JSON pode conter:
 }
 ```
 
-# 🔄 Continuação — Unidade 6
 
 ## 🧵 AsyncTask (Execução Assíncrona)
 
@@ -761,3 +760,215 @@ Aplicativo que:
 - RecyclerView é essencial para exibir listas dinâmicas  
 
 ---
+
+# 🧩 Unidade 7 — APIs, Estrutura de Projeto e Requisições
+
+## 🌐 API (Application Programming Interface)
+
+### 📌 O que é?
+
+Uma **API** é um conjunto de regras e protocolos que permite que diferentes sistemas se comuniquem entre si.
+
+---
+
+### 🎯 Para que serve?
+
+- Permitir integração entre aplicações  
+- Reutilizar funcionalidades de outros sistemas  
+- Consumir dados de serviços externos  
+
+---
+
+### 💡 Conceito importante
+
+- A API expõe funcionalidades  
+- O app consome essas funcionalidades  
+- Não é necessário saber como a API foi implementada internamente  
+
+---
+
+## 📁 Estrutura de um Projeto Android
+
+Um projeto Android é organizado em várias partes:
+
+---
+
+### 📦 Principais elementos
+
+- **Pacote do app**  
+- **Ícone do aplicativo**  
+- **Tela inicial (Activity principal)**  
+
+---
+
+### 💻 Código
+
+- Arquivos Java ou Kotlin  
+- Contêm a lógica das telas  
+
+---
+
+### 🖼️ Recursos visuais
+
+- Imagens (drawables)  
+- Elementos gráficos  
+
+---
+
+### 🧱 Layouts
+
+- Arquivos `.xml`  
+- Definem a interface das telas  
+
+---
+
+### 🎨 Recursos adicionais
+
+- Strings (textos do app)  
+- Estilos e temas  
+
+---
+
+### ⚙️ Configurações
+
+- Versões do SDK  
+- Configurações de build  
+
+---
+
+### 📋 Menus
+
+- Definidos em arquivos `.xml`  
+
+---
+
+### 📱 Ícones
+
+- Diferentes resoluções para diferentes dispositivos  
+
+---
+
+## 📄 AndroidManifest.xml
+
+### 📌 O que é?
+
+Arquivo responsável por definir configurações essenciais do app.
+
+---
+
+### 🎯 Funções
+
+- Declarar permissões  
+- Registrar Activities  
+- Configurar componentes do app  
+- Declarar dependências necessárias  
+
+---
+
+## ⚙️ Gradle (build.gradle.kts)
+
+### 📌 O que é?
+
+Arquivo responsável por gerenciar dependências e configurações do projeto.
+
+---
+
+### 📦 Exemplo de dependência
+
+```kotlin
+implementation(libs.okhttp)
+```
+
+# 🌐 Integração com APIs e Estrutura do App
+
+## 🌐 OkHttp
+
+- Biblioteca para requisições HTTP  
+- Permite comunicação com APIs  
+- Simples e eficiente  
+
+---
+
+## 🧱 Interface (Layout)
+
+### 📄 activity_main.xml
+
+- Utiliza **LinearLayout**  
+- Define a estrutura da tela  
+
+---
+
+### 🔘 Button
+
+Pode conter a propriedade:
+
+```xml
+android:onClick="obterDados"
+```
+---
+
+## 🔹 Chama um método na Activity
+Um componente da interface (como um botão) pode chamar um método definido na Activity, geralmente usando `onClick`.
+
+---
+
+## 💻 MainActivity
+
+### 📌 Responsabilidades
+- Importar bibliotecas necessárias  
+- Declarar variáveis de instância  
+- Implementar lógica da aplicação  
+- Consumir APIs  
+
+---
+
+## 🔄 Métodos HTTP (CRUD)
+
+Esses métodos representam operações básicas em APIs:
+
+### 📌 GET
+- Buscar dados  
+- Exemplo: listar usuários  
+
+### 📌 POST
+- Enviar dados  
+- Criar novos registros  
+
+### 📌 PUT
+- Atualizar dados existentes  
+
+### 📌 DELETE
+- Remover dados  
+
+---
+
+## 🧠 CRUD
+
+| Operação | Método HTTP |
+|----------|------------|
+| Create   | POST       |
+| Read     | GET        |
+| Update   | PUT        |
+| Delete   | DELETE     |
+
+---
+
+## 📌 Observações Gerais
+- APIs são essenciais para aplicativos modernos  
+- OkHttp facilita a comunicação com servidores  
+- Gradle gerencia dependências do projeto  
+- XML define a interface, Kotlin/Java define a lógica  
+- CRUD representa as operações básicas em sistemas  
+
+---
+
+## ✅ Checklist de Revisão
+
+- [ ] Sei o que é o OkHttp e para que serve  
+- [ ] Entendo o papel do `activity_main.xml`  
+- [ ] Sei como um Button chama um método (`onClick`)  
+- [ ] Conheço as responsabilidades da MainActivity  
+- [ ] Entendo os métodos HTTP (GET, POST, PUT, DELETE)  
+- [ ] Sei o que significa CRUD  
+- [ ] Entendo a separação entre XML (interface) e código (lógica)  
+- [ ] Sei que APIs são essenciais para apps modernos  
