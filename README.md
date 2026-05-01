@@ -324,3 +324,151 @@ Gradle é um sistema de **automação de build** utilizado no Android.
 - Gradle é essencial para o funcionamento e organização do projeto
 
 ---
+
+# 🧩 Unidade 5 — Componentes de Interface e Navegação
+
+## 🔘 Button (Botão)
+
+### 📌 O que é?
+
+O **Button** é um componente de interface utilizado para permitir que o usuário execute uma **ação ao clicar**.
+
+---
+
+### 🎯 Para que serve?
+
+- Navegar entre telas
+- Executar funções
+- Disparar eventos (ex: abrir outra Activity)
+
+---
+
+## 🖼️ Inserir Ícone em um Button
+
+É possível adicionar ícones ao botão utilizando propriedades específicas.
+
+---
+
+### ⚙️ Exemplo de Button com Ícones
+
+```xml
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Ir para Segunda Activity"
+    android:onClick="abrirSegundaActivity"
+    android:drawableLeft="@drawable/icons8_formato_100"
+    android:drawableRight="@drawable/icons8_formato_100"
+    android:drawableTop="@drawable/icons8_formato_100"
+    android:drawableBottom="@drawable/icons8_formato_100"
+    android:backgroundTint="#00040D"
+/>
+```
+
+### 📌 Outro exemplo simplificado
+
+```xml
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:drawableLeft="@drawable/icons8_teste_96"
+    android:backgroundTint="#7AB7E6"
+/>
+```
+
+# 📱 Activity e Componentes Relacionados
+
+## 🔘 Observações sobre Button
+
+- `drawableLeft`, `drawableRight`, `drawableTop`, `drawableBottom` definem a **posição do ícone** no botão  
+- `backgroundTint` altera a **cor de fundo do botão**  
+- `onClick` chama um **método da Activity**  
+
+---
+
+## 📱 Activity
+
+### 📌 O que é?
+
+A **Activity** é o componente responsável por representar uma **tela do aplicativo**.
+
+---
+
+### 🎯 Para que serve?
+
+- Exibir interface ao usuário  
+- Receber interações (toques, cliques)  
+- Controlar a lógica da tela  
+
+---
+
+### 💡 Exemplos práticos
+
+Em um aplicativo de e-mail:
+
+- Uma Activity → lista de e-mails  
+- Outra Activity → visualizar e-mail  
+- Outra Activity → escrever novo e-mail  
+
+---
+
+### 🔄 Navegação entre Activities
+
+- Uma Activity pode **iniciar outra Activity**  
+- Isso permite a **navegação entre telas do aplicativo**  
+
+---
+
+## 🧱 Criar uma Nova Activity
+
+### 📂 Método 1
+
+1. Clique com botão direito em **app**  
+2. Selecione:  
+   - **New**  
+   - **Activity**  
+3. Escolha o tipo:  
+   - Ex: **Empty Views Activity**  
+
+---
+
+### 📂 Método 2
+
+1. Menu **File**  
+2. **New**  
+3. **Activity**  
+4. Escolher o modelo desejado  
+
+---
+
+### ⚙️ Configuração da Activity
+
+- Definir nome da Activity  
+- Marcar:  
+  - **Generate a Layout File**  
+- Escolher linguagem:  
+  - Kotlin  
+- Clicar em **Finish**  
+
+---
+
+## 📁 Estrutura das Activities
+
+### 📌 Onde ficam?
+
+- **Classe da Activity:**  
+  - Código (Java/Kotlin)  
+
+- **Layout da Activity:**  
+  - Arquivo XML (interface)  
+
+---
+
+## 📌 Observações Gerais
+
+- Cada tela do app geralmente corresponde a uma Activity  
+- Activities são responsáveis pela navegação e interação  
+- Buttons são frequentemente usados para trocar de Activity  
+- A separação entre **lógica (código)** e **interface (XML)** é fundamental  
+
+---
